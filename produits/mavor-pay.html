@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mavor Pay — Mavor IT</title>
+    <meta name="description" content="Mavor Pay, le moyen de paiement mobile rapide et sûr développé par Mavor IT.">
+    <link rel="icon" type="image/x-icon" href="../images/icons/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/tailwind.build.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-slate-800/70 dark:bg-slate-950/80">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+            <a href="../index.html" class="flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-base font-extrabold text-white shadow-soft">M</span>
+                <span class="font-sans text-lg font-bold text-slate-900 dark:text-white">Mavor<span class="text-brand-600 dark:text-brand-400">IT</span></span>
+            </a>
+
+            <div class="hidden items-center gap-8 lg:flex">
+                <a href="../index.html#accueil" class="nav-link">Accueil</a>
+                <a href="../index.html#services" class="nav-link">Services</a>
+
+                <div class="group relative">
+                    <button class="nav-link flex items-center gap-1">
+                        Produits
+                        <i class="fa-solid fa-chevron-down text-[10px] transition group-hover:rotate-180"></i>
+                    </button>
+                    <div class="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-2 opacity-0 shadow-soft transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-slate-800 dark:bg-slate-900">
+                        <a href="./mavor-school-director.html" class="flex items-start gap-3 rounded-xl p-3 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span>
+                                <span class="block text-sm font-semibold text-slate-900 dark:text-white">Mavor School Director</span>
+                                <span class="block text-xs text-slate-500 dark:text-slate-400">Gestion d'établissements scolaires</span>
+                            </span>
+                        </a>
+                        <a href="./gcs.html" class="flex items-start gap-3 rounded-xl p-3 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-cash-register"></i></span>
+                            <span>
+                                <span class="block text-sm font-semibold text-slate-900 dark:text-white">GCS</span>
+                                <span class="block text-xs text-slate-500 dark:text-slate-400">Gestion de restaurants & commerces</span>
+                            </span>
+                        </a>
+                        <a href="./mavor-scanner.html" class="flex items-start gap-3 rounded-xl p-3 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-qrcode"></i></span>
+                            <span>
+                                <span class="block text-sm font-semibold text-slate-900 dark:text-white">Mavor Scanner</span>
+                                <span class="block text-xs text-slate-500 dark:text-slate-400">Gestion de présence</span>
+                            </span>
+                        </a>
+                        <a href="./mavor-pay.html" class="flex items-start gap-3 rounded-xl p-3 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                            <span>
+                                <span class="block text-sm font-semibold text-slate-900 dark:text-white">Mavor Pay</span>
+                                <span class="block text-xs text-slate-500 dark:text-slate-400">Paiement mobile</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" type="button" aria-label="Changer de thème" class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-brand-400">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+                <a href="../index.html#contact" class="btn-primary hidden lg:inline-flex">Nous contacter</a>
+                <button id="menu-toggle" type="button" aria-label="Ouvrir le menu" class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300 lg:hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-6 py-4 dark:border-slate-800 dark:bg-slate-950 lg:hidden">
+            <div class="flex flex-col gap-4">
+                <a href="../index.html#accueil" class="nav-link">Accueil</a>
+                <a href="../index.html#services" class="nav-link">Services</a>
+                <p class="pt-2 text-xs font-semibold uppercase tracking-wider text-slate-400">Produits</p>
+                <a href="./mavor-school-director.html" class="nav-link pl-2">Mavor School Director</a>
+                <a href="./gcs.html" class="nav-link pl-2">GCS</a>
+                <a href="./mavor-scanner.html" class="nav-link pl-2">Mavor Scanner</a>
+                <a href="./mavor-pay.html" class="nav-link pl-2 text-brand-600 dark:text-brand-400">Mavor Pay</a>
+                <a href="../index.html#contact" class="nav-link pt-2">Contact</a>
+                <a href="../index.html#contact" class="btn-primary mt-2 w-full">Nous contacter</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Hero -->
+        <section class="relative overflow-hidden">
+            <div class="absolute inset-0 -z-10 bg-grid-pattern bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_20%,transparent_75%)]"></div>
+            <div class="absolute -top-24 right-0 -z-10 h-96 w-96 rounded-full bg-brand-400/20 blur-3xl dark:bg-brand-500/10"></div>
+            <div class="absolute -bottom-32 left-0 -z-10 h-96 w-96 rounded-full bg-accent-400/20 blur-3xl dark:bg-accent-500/10"></div>
+
+            <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-16 pt-16 lg:grid-cols-2 lg:px-8 lg:pt-24">
+                <div>
+                    <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-accent-500 text-xl text-white shadow-soft">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </span>
+                    <span class="eyebrow mt-6"><i class="fa-solid fa-box-open"></i> Paiement mobile</span>
+                    <h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">Le moyen de paiement mobile rapide et sûr</h1>
+                    <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-400">Mavor Pay permet aux marchands d'encaisser et aux clients de payer en toute simplicité, directement depuis un smartphone.</p>
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <a href="../index.html#contact" class="btn-primary">Demander une démo <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#fonctionnalites" class="btn-outline">Voir les fonctionnalités</a>
+                    </div>
+                    <dl class="mt-14 grid grid-cols-3 gap-6 border-t border-slate-200 pt-8 dark:border-slate-800">
+                        <div>
+                            <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Paiement</dt>
+                            <dd class="mt-1 text-xl font-bold text-slate-900 dark:text-white">Par QR code</dd>
+                        </div>
+                        <div>
+                            <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Sécurité</dt>
+                            <dd class="mt-1 text-xl font-bold text-slate-900 dark:text-white">Renforcée</dd>
+                        </div>
+                        <div>
+                            <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Suivi</dt>
+                            <dd class="mt-1 text-xl font-bold text-slate-900 dark:text-white">Transactions en direct</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                    <div class="overflow-hidden rounded-3xl shadow-soft">
+                        <img src="../images/hero/pay.jpg" alt="Paiement mobile par QR code sur un terminal marchand" class="h-[420px] w-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 hidden items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800 dark:bg-slate-900 sm:flex">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-qrcode"></i></span>
+                        <span>
+                            <span class="block text-xs text-slate-500 dark:text-slate-400">Transactions du jour</span>
+                            <span class="block text-lg font-bold text-slate-900 dark:text-white">87</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fonctionnalités -->
+        <section id="fonctionnalites" class="section">
+            <div class="mx-auto max-w-2xl text-center">
+                <span class="eyebrow"><i class="fa-solid fa-star"></i> Fonctionnalités</span>
+                <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">Tout ce qu'il faut, sans superflu</h2>
+            </div>
+            <div class="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div class="card">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </span>
+                    <h3 class="mt-6 text-lg font-bold">Paiement par QR code</h3>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Scannez pour payer ou encaisser en quelques secondes.</p>
+                </div>
+                <div class="card">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </span>
+                    <h3 class="mt-6 text-lg font-bold">Historique des transactions</h3>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Retrouvez à tout moment le détail de vos paiements et encaissements.</p>
+                </div>
+                <div class="card">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+                    <h3 class="mt-6 text-lg font-bold">Sécurité renforcée</h3>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Chaque transaction est protégée pour garantir la confiance des utilisateurs.</p>
+                </div>
+                <div class="card">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-store"></i>
+                    </span>
+                    <h3 class="mt-6 text-lg font-bold">Encaissement marchand</h3>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Un espace dédié pour les commerçants qui souhaitent encaisser via l'application.</p>
+                </div>
+                <div class="card">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-bell"></i>
+                    </span>
+                    <h3 class="mt-6 text-lg font-bold">Notifications instantanées</h3>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Recevez une confirmation immédiate à chaque transaction.</p>
+                </div>
+                <div class="card">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-headset"></i>
+                    </span>
+                    <h3 class="mt-6 text-lg font-bold">Support réactif</h3>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Une équipe disponible pour accompagner marchands et utilisateurs.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Public cible -->
+        <section class="border-y border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/40">
+            <div class="section">
+                <div class="mx-auto max-w-2xl text-center">
+                    <span class="eyebrow"><i class="fa-solid fa-users"></i> Pour qui ?</span>
+                    <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">Pensé pour marchands et clients</h2>
+                    <p class="mt-4 text-slate-600 dark:text-slate-400">Mavor Pay simplifie les paiements du quotidien pour tous les profils.</p>
+                </div>
+                <div class="mt-14 grid gap-6 sm:grid-cols-3">
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center dark:border-slate-800 dark:bg-slate-900">
+                    <span class="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-store"></i>
+                    </span>
+                    <p class="mt-4 text-sm font-bold text-slate-900 dark:text-white">Marchands</p>
+                    <p class="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">Encaissez vos clients rapidement, sans matériel supplémentaire.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center dark:border-slate-800 dark:bg-slate-900">
+                    <span class="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <p class="mt-4 text-sm font-bold text-slate-900 dark:text-white">Particuliers</p>
+                    <p class="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">Payez vos achats du quotidien directement depuis votre téléphone.</p>
+                </div>
+                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center dark:border-slate-800 dark:bg-slate-900">
+                    <span class="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                        <i class="fa-solid fa-building"></i>
+                    </span>
+                    <p class="mt-4 text-sm font-bold text-slate-900 dark:text-white">Entreprises</p>
+                    <p class="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">Simplifiez les paiements internes et les remboursements de frais.</p>
+                </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA -->
+        <section class="section">
+            <div class="rounded-3xl bg-gradient-to-br from-brand-600 to-brand-900 px-8 py-16 text-center text-white shadow-soft">
+                <h2 class="text-3xl font-extrabold sm:text-4xl">Prêt à essayer ce produit ?</h2>
+                <p class="mx-auto mt-4 max-w-xl text-brand-100">Contactez notre équipe pour une démonstration adaptée à votre activité.</p>
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <a href="../index.html#contact" class="btn bg-white text-brand-700 hover:bg-brand-50">Nous contacter</a>
+                    <a href="../index.html#products" class="btn-ghost border border-white/30">Voir tous les produits</a>
+                </div>
+                <p class="mt-8 text-sm text-brand-200">Découvrez aussi : <a href="./mavor-scanner.html" class="font-semibold text-brand-600 hover:underline dark:text-brand-400">Mavor Scanner</a>, <a href="./gcs.html" class="font-semibold text-brand-600 hover:underline dark:text-brand-400">GCS</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-slate-950 text-slate-400 dark:border-slate-800">
+        <div class="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+            <div class="grid gap-10 md:grid-cols-4">
+                <div class="md:col-span-2">
+                    <a href="../index.html" class="flex items-center gap-2.5">
+                        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-base font-extrabold text-white">M</span>
+                        <span class="font-sans text-lg font-bold text-white">Mavor<span class="text-brand-400">IT</span></span>
+                    </a>
+                    <p class="mt-4 max-w-sm text-sm leading-relaxed">Votre partenaire en technologies : applications multiplateformes, électronique sur mesure et logiciels de gestion.</p>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-white">Produits</p>
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li><a href="./mavor-school-director.html" class="hover:text-white">Mavor School Director</a></li>
+                        <li><a href="./gcs.html" class="hover:text-white">GCS</a></li>
+                        <li><a href="./mavor-scanner.html" class="hover:text-white">Mavor Scanner</a></li>
+                        <li><a href="./mavor-pay.html" class="hover:text-white">Mavor Pay</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-white">Entreprise</p>
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li><a href="../index.html#services" class="hover:text-white">Services</a></li>
+                        <li><a href="../index.html#contact" class="hover:text-white">Contact</a></li>
+                        <li><a href="../teolis/privacy.html" class="hover:text-white">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 text-sm sm:flex-row">
+                <p>&copy; <span id="year"></span> Mavor IT. Tous droits réservés.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white">Mentions légales</a>
+                    <a href="../teolis/privacy.html" class="hover:text-white">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,124 +1,338 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-	<title>Mavor Informations Technologies 8</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mavor IT — Solutions technologiques sur mesure</title>
+    <meta name="description" content="Mavor IT conçoit des applications, des solutions électroniques et des logiciels de gestion sur mesure : Mavor School Director, GCS, Mavor Scanner et Mavor Pay.">
+    <link rel="icon" type="image/x-icon" href="./images/icons/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/tailwind.build.css">
+    <script>
+        if (localStorage.getItem('theme') === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
 </head>
-<body>
-	
-	
-	<div class="bg-img1 overlay1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url('images/bg01.jpg');">
-		<div class="wsize1">
-			<p class="txt-center p-b-23">
-				<i class="zmdi zmdi-card-giftcard cl0 fs-60"></i>
-			</p>
+<body class="min-h-screen">
 
-			<h3 class="l1-txt1 txt-center p-b-22">
-				Mavor Informations Technologies
-			</h3>
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur-md dark:border-slate-800/70 dark:bg-slate-950/80">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+            <a href="./index.html" class="flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-base font-extrabold text-white shadow-soft">M</span>
+                <span class="font-sans text-lg font-bold text-slate-900 dark:text-white">Mavor<span class="text-brand-600 dark:text-brand-400">IT</span></span>
+            </a>
 
-			<p class="txt-center m2-txt1 p-b-67">
-				Our website is under construction, follow us for update now!
-			</p>
+            <div class="hidden items-center gap-8 lg:flex">
+                <a href="./index.html#accueil" class="nav-link">Accueil</a>
+                <a href="./index.html#services" class="nav-link">Services</a>
 
-			<div class="flex-w flex-sa-m cd100 bor1 p-t-42 p-b-22 p-l-50 p-r-50 respon1">
-				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 days">35</span>
-					<span class="m2-txt2">Days</span>
-				</div>
+                <div class="group relative">
+                    <button class="nav-link flex items-center gap-1">
+                        Produits
+                        <i class="fa-solid fa-chevron-down text-[10px] transition group-hover:rotate-180"></i>
+                    </button>
+                    <div class="invisible absolute left-1/2 top-full w-72 -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-2 opacity-0 shadow-soft transition duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-slate-800 dark:bg-slate-900">
+                        <a href="./produits/mavor-school-director.html" class="flex items-start gap-3 rounded-xl p-3 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span>
+                                <span class="block text-sm font-semibold text-slate-900 dark:text-white">Mavor School Director</span>
+                                <span class="block text-xs text-slate-500 dark:text-slate-400">Gestion de l'enseignement supérieur</span>
+                            </span>
+                        </a>
+                        <a href="./produits/gcs.html" class="flex items-start gap-3 rounded-xl p-3 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-cash-register"></i></span>
+                            <span>
+                                <span class="block text-sm font-semibold text-slate-900 dark:text-white">GCS</span>
+                                <span class="block text-xs text-slate-500 dark:text-slate-400">Gestion de restaurants &amp; commerces</span>
+                            </span>
+                        </a>
+                        <a href="./produits/mavor-scanner.html" class="flex items-start gap-3 rounded-xl p-3 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-qrcode"></i></span>
+                            <span>
+                                <span class="block text-sm font-semibold text-slate-900 dark:text-white">Mavor Scanner</span>
+                                <span class="block text-xs text-slate-500 dark:text-slate-400">Gestion de présence</span>
+                            </span>
+                        </a>
+                        <a href="./produits/mavor-pay.html" class="flex items-start gap-3 rounded-xl p-3 hover:bg-slate-50 dark:hover:bg-slate-800">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                            <span>
+                                <span class="block text-sm font-semibold text-slate-900 dark:text-white">Mavor Pay</span>
+                                <span class="block text-xs text-slate-500 dark:text-slate-400">Paiement mobile</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
 
-				<span class="l1-txt2 p-b-22">:</span>
-				
-				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 hours">17</span>
-					<span class="m2-txt2">Hours</span>
-				</div>
+                <a href="./index.html#contact" class="nav-link">Contact</a>
+            </div>
 
-				<span class="l1-txt2 p-b-22 respon2">:</span>
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" type="button" aria-label="Changer de thème" class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-300 dark:hover:text-brand-400">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:block"></i>
+                </button>
+                <a href="./index.html#contact" class="btn-primary hidden lg:inline-flex">Nous contacter</a>
+                <button id="menu-toggle" type="button" aria-label="Ouvrir le menu" class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300 lg:hidden">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
 
-				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 minutes">50</span>
-					<span class="m2-txt2">Minutes</span>
-				</div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-6 py-4 dark:border-slate-800 dark:bg-slate-950 lg:hidden">
+            <div class="flex flex-col gap-4">
+                <a href="./index.html#accueil" class="nav-link">Accueil</a>
+                <a href="./index.html#services" class="nav-link">Services</a>
+                <p class="pt-2 text-xs font-semibold uppercase tracking-wider text-slate-400">Produits</p>
+                <a href="./produits/mavor-school-director.html" class="nav-link pl-2">Mavor School Director</a>
+                <a href="./produits/gcs.html" class="nav-link pl-2">GCS</a>
+                <a href="./produits/mavor-scanner.html" class="nav-link pl-2">Mavor Scanner</a>
+                <a href="./produits/mavor-pay.html" class="nav-link pl-2">Mavor Pay</a>
+                <a href="./index.html#contact" class="nav-link pt-2">Contact</a>
+                <a href="./index.html#contact" class="btn-primary mt-2 w-full">Nous contacter</a>
+            </div>
+        </div>
+    </header>
 
-				<span class="l1-txt2 p-b-22">:</span>
+    <main>
+        <!-- Hero -->
+        <section id="accueil" class="relative overflow-hidden">
+            <div class="absolute inset-0 -z-10 bg-grid-pattern bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_20%,transparent_75%)]"></div>
+            <div class="absolute -top-24 right-0 -z-10 h-96 w-96 rounded-full bg-brand-400/20 blur-3xl dark:bg-brand-500/10"></div>
+            <div class="absolute -bottom-32 left-0 -z-10 h-96 w-96 rounded-full bg-accent-400/20 blur-3xl dark:bg-accent-500/10"></div>
 
-				<div class="flex-col-c-m wsize2 m-b-20">
-					<span class="l1-txt2 p-b-4 seconds">39</span>
-					<span class="m2-txt2">Seconds</span>
-				</div>
-			</div>
+            <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 pb-20 pt-16 lg:grid-cols-2 lg:px-8 lg:pt-24">
+                <div>
+                    <span class="eyebrow"><i class="fa-solid fa-bolt"></i> Votre partenaire technologique</span>
+                    <h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+                        Des logiciels et solutions électroniques qui font avancer votre entreprise
+                    </h1>
+                    <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-400">
+                        Mavor IT conçoit, développe et déploie des applications multiplateformes, des solutions électroniques sur mesure et des logiciels de gestion pensés pour les réalités du terrain.
+                    </p>
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <a href="#products" class="btn-primary">
+                            Découvrir nos produits
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn-outline">Nous contacter</a>
+                    </div>
 
-			<form class="flex-w flex-c-m contact100-form validate-form p-t-70">
-				<div class="wrap-input100 validate-input where1" data-validate = "Email is required: ex@abc.xyz">
-					<input class="s1-txt1 placeholder0 input100" type="text" name="email" placeholder="Email Address">
-					<span class="focus-input100"></span>
-				</div>
+                    <dl class="mt-14 grid grid-cols-3 gap-6 border-t border-slate-200 pt-8 dark:border-slate-800">
+                        <div>
+                            <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Produits</dt>
+                            <dd class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">4</dd>
+                        </div>
+                        <div>
+                            <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Domaines</dt>
+                            <dd class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">Logiciel &amp; électronique</dd>
+                        </div>
+                        <div>
+                            <dt class="text-xs font-semibold uppercase tracking-wider text-slate-400">Présence</dt>
+                            <dd class="mt-1 text-2xl font-bold text-slate-900 dark:text-white">Togo</dd>
+                        </div>
+                    </dl>
+                </div>
 
-				<button class="flex-c-m s1-txt1 size2 how-btn trans-04 where1">
-					Notify Me
-				</button>
-			</form>			
-		</div>
-	</div>
+                <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                    <div class="overflow-hidden rounded-3xl shadow-soft">
+                        <img src="./images/hero/home.jpg" alt="Tableau de bord analytique affiché sur un ordinateur portable" class="h-[420px] w-full object-cover">
+                    </div>
+                    <div class="absolute -right-6 -top-6 hidden rotate-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800 dark:bg-slate-900 sm:block">
+                        <i class="fa-solid fa-check text-emerald-500"></i>
+                        <span class="ml-1 text-xs font-semibold text-slate-700 dark:text-slate-200">Données en temps réel</span>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 hidden items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft dark:border-slate-800 dark:bg-slate-900 sm:flex">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-chart-line"></i></span>
+                        <span>
+                            <span class="block text-xs text-slate-500 dark:text-slate-400">Produits pilotés par la donnée</span>
+                            <span class="block text-lg font-bold text-slate-900 dark:text-white">4 tableaux de bord</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="mx-auto max-w-2xl text-center">
+                <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> Nos services</span>
+                <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">Ce que nous savons faire</h2>
+                <p class="mt-4 text-slate-600 dark:text-slate-400">De l'idée au produit fini, nous accompagnons vos projets logiciels et électroniques de bout en bout.</p>
+            </div>
 
+            <div class="mt-14 grid gap-8 md:grid-cols-3">
+                <div class="card overflow-hidden !p-0">
+                    <img src="./images/services/applications.jpg" alt="Développement d'applications multiplateformes" class="h-44 w-full object-cover">
+                    <div class="p-8">
+                        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold">Applications multiplateformes</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Nous développons des applications web, mobiles et de bureau à partir d'une base de code unique, pour toucher vos utilisateurs partout.</p>
+                    </div>
+                </div>
+                <div class="card overflow-hidden !p-0">
+                    <img src="./images/services/electronique.jpg" alt="Carte électronique et composants" class="h-44 w-full object-cover">
+                    <div class="p-8">
+                        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                            <i class="fa-solid fa-microchip"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold">Réalisation électronique</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Conception et réalisation de projets électroniques sur mesure : prototypage, cartes électroniques et objets connectés.</p>
+                    </div>
+                </div>
+                <div class="card overflow-hidden !p-0">
+                    <img src="./images/services/formation.jpg" alt="Formation et conseils en technologies" class="h-44 w-full object-cover">
+                    <div class="p-8">
+                        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold">Formation &amp; conseils</h3>
+                        <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Nous formons vos équipes et vous conseillons sur les technologies les plus adaptées à vos enjeux métier.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	
+        <!-- Products Section -->
+        <section id="products" class="border-y border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/40">
+            <div class="section">
+                <div class="mx-auto max-w-2xl text-center">
+                    <span class="eyebrow"><i class="fa-solid fa-box-open"></i> Nos produits</span>
+                    <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">Des logiciels prêts à l'emploi</h2>
+                    <p class="mt-4 text-slate-600 dark:text-slate-400">Quatre solutions conçues pour répondre à des besoins concrets : écoles, commerces, présence et paiement.</p>
+                </div>
 
-<!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/moment.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<script>
-		$('.cd100').countdown100({
-			/*Set Endtime here*/
-			/*Endtime must be > current time*/
-			endtimeYear: 0,
-			endtimeMonth: 0,
-			endtimeDate: 30,
-			endtimeHours: 12,
-			endtimeMinutes: 0,
-			endtimeSeconds: 0,
-			timeZone: "" 
-			// ex:  timeZone: "America/New_York"
-			//go to " http://momentjs.com/timezone/ " to get timezone
-		});
-	</script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
+                <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <a href="./produits/mavor-school-director.html" class="card flex flex-col">
+                        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold">Mavor School Director</h3>
+                        <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Logiciel intégré pour universités, grandes écoles et instituts de formation.</p>
+                        <span class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400">En savoir plus <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                    </a>
+                    <a href="./produits/gcs.html" class="card flex flex-col">
+                        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                            <i class="fa-solid fa-cash-register"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold">GCS</h3>
+                        <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Gestion de restaurants et commerces : caisse, stock et rapports de vente.</p>
+                        <span class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400">En savoir plus <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                    </a>
+                    <a href="./produits/mavor-scanner.html" class="card flex flex-col">
+                        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                            <i class="fa-solid fa-qrcode"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold">Mavor Scanner</h3>
+                        <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Contrôle de présence par empreinte digitale ou badge, avec cloud.</p>
+                        <span class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400">En savoir plus <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                    </a>
+                    <a href="./produits/mavor-pay.html" class="card flex flex-col">
+                        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600 dark:bg-brand-500/10 dark:text-brand-400">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold">Mavor Pay</h3>
+                        <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-400">Le moyen de paiement mobile rapide et sûr pour marchands et clients.</p>
+                        <span class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400">En savoir plus <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="grid gap-16 lg:grid-cols-2">
+                <div>
+                    <span class="eyebrow"><i class="fa-solid fa-envelope"></i> Contact</span>
+                    <h2 class="mt-4 text-3xl font-extrabold sm:text-4xl">Parlons de votre projet</h2>
+                    <p class="mt-4 max-w-md text-slate-600 dark:text-slate-400">Une idée, un besoin, une question ? Notre équipe vous répond rapidement.</p>
+
+                    <ul class="mt-10 space-y-5">
+                        <li class="flex items-start gap-4">
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-location-dot"></i></span>
+                            <span class="text-sm text-slate-600 dark:text-slate-400">Hedzranawoe, Lomé, Togo</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-phone"></i></span>
+                            <span class="text-sm text-slate-600 dark:text-slate-400">+228 90 75 58 41 &nbsp;/&nbsp; +229 67 73 73 06</span>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/10 dark:text-brand-400"><i class="fa-solid fa-at"></i></span>
+                            <a href="mailto:messan.monti@gmail.com" class="text-sm text-slate-600 hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400">messan.monti@gmail.com</a>
+                        </li>
+                    </ul>
+
+                    <div class="mt-10 flex gap-3">
+                        <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Twitter / X" class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" class="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition hover:border-brand-400 hover:text-brand-600 dark:border-slate-700 dark:text-slate-400"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <form id="contactForm" class="card space-y-5">
+                    <div>
+                        <label for="name" class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Nom</label>
+                        <input type="text" id="name" name="name" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
+                    </div>
+                    <div>
+                        <label for="email" class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-white">
+                    </div>
+                    <div>
+                        <label for="message" class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-700 dark:bg-slate-800 dark:text-white"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">Envoyer le message</button>
+                    <p id="contactNote" class="text-xs text-slate-400">Ce formulaire ouvre votre messagerie afin de nous envoyer directement votre message.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-slate-950 text-slate-400 dark:border-slate-800">
+        <div class="mx-auto max-w-7xl px-6 py-14 lg:px-8">
+            <div class="grid gap-10 md:grid-cols-4">
+                <div class="md:col-span-2">
+                    <a href="./index.html" class="flex items-center gap-2.5">
+                        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 text-base font-extrabold text-white">M</span>
+                        <span class="font-sans text-lg font-bold text-white">Mavor<span class="text-brand-400">IT</span></span>
+                    </a>
+                    <p class="mt-4 max-w-sm text-sm leading-relaxed">Votre partenaire en technologies : applications multiplateformes, électronique sur mesure et logiciels de gestion.</p>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-white">Produits</p>
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li><a href="./produits/mavor-school-director.html" class="hover:text-white">Mavor School Director</a></li>
+                        <li><a href="./produits/gcs.html" class="hover:text-white">GCS</a></li>
+                        <li><a href="./produits/mavor-scanner.html" class="hover:text-white">Mavor Scanner</a></li>
+                        <li><a href="./produits/mavor-pay.html" class="hover:text-white">Mavor Pay</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-sm font-semibold text-white">Entreprise</p>
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li><a href="./index.html#services" class="hover:text-white">Services</a></li>
+                        <li><a href="./index.html#contact" class="hover:text-white">Contact</a></li>
+                        <li><a href="./teolis/privacy.html" class="hover:text-white">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 text-sm sm:flex-row">
+                <p>&copy; <span id="year"></span> Mavor IT. Tous droits réservés.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white">Mentions légales</a>
+                    <a href="./teolis/privacy.html" class="hover:text-white">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>

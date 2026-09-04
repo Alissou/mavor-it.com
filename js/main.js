@@ -1,57 +1,54 @@
-
-(function ($) {
-    "use strict";
-
-    /*==================================================================
-    [ Validate ]*/
-    var input = $('.validate-input .input100');
-
-    $('.validate-form').on('submit',function(){
-        var check = true;
-
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
-            }
-        }
-
-        return check;
-    });
-
-
-    $('.validate-form .input100').each(function(){
-        $(this).focus(function(){
-           hideValidate(this);
+document.addEventListener("DOMContentLoaded", function () {
+    // ----- Thème clair / sombre -----
+    const themeToggle = document.getElementById("theme-toggle");
+    if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+            const isDark = document.documentElement.classList.toggle("dark");
+            localStorage.setItem("theme", isDark ? "dark" : "light");
         });
-    });
-
-    function validate (input) {
-        if($(input).attr('type') == 'email' || $(input).attr('name') == 'email') {
-            if($(input).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-                return false;
-            }
-        }
-        else {
-            if($(input).val().trim() == ''){
-                return false;
-            }
-        }
     }
 
-    function showValidate(input) {
-        var thisAlert = $(input).parent();
+    // ----- Menu mobile -----
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+            const icon = menuToggle.querySelector("i");
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-xmark");
+        });
 
-        $(thisAlert).addClass('alert-validate');
+        // Ferme le menu mobile après un clic sur un lien
+        mobileMenu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.add("hidden");
+                const icon = menuToggle.querySelector("i");
+                icon.classList.add("fa-bars");
+                icon.classList.remove("fa-xmark");
+            });
+        });
     }
 
-    function hideValidate(input) {
-        var thisAlert = $(input).parent();
-
-        $(thisAlert).removeClass('alert-validate');
+    // ----- Année dans le pied de page -----
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
     }
 
-    
-    
+    // ----- Formulaire de contact (pas de backend : ouvre la messagerie) -----
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
 
-})(jQuery);
+            const subject = encodeURIComponent("Nouveau message depuis mavor-it.com — " + name);
+            const body = encodeURIComponent(message + "\n\n---\nEmail : " + email);
+
+            window.location.href = "mailto:messan.monti@gmail.com?subject=" + subject + "&body=" + body;
+        });
+    }
+});

@@ -1,0 +1,13 @@
+{
+  "name": "mavor-it-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site web Mavor IT",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/tailwind.css -o ./css/tailwind.build.css --minify",
+    "watch:css": "tailwindcss -i ./src/tailwind.css -o ./css/tailwind.build.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}
